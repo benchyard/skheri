@@ -95,7 +95,7 @@ GitLab CI and Acahti can run the same Helm command; none is a prerequisite.
 
 | Component | Responsibility |
 |---|---|
-| [Benchyard](https://github.com/benchyard/benchyard-console) | Tasks, people and agent execution |
+| [Benchyard](https://hero.benchyard.com/) | Tasks, people and agent execution |
 | [Acahti](https://github.com/lpythu/acahti) | Optional Git, checks, packages and identity |
 | **Skheri** | Persistent development workspace and application environments |
 | [Argos](https://github.com/lpythu/argos) | Repeatable checks and reviewable evidence |
