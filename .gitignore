@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+site/
+.venv/
+__pycache__/
+*.pyc
+*.tgz
+kubeconfig*
+.DS_Store

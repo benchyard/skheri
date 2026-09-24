@@ -1,0 +1,9 @@
+command:
+  - sh
+  - -c
+  - |
+    mkdir -p /workspace/app
+    cd /workspace/app
+    while [ ! -f package-lock.json ]; do sleep 2; done
+    npm ci --cache /workspace/.npm
+    exec npm run dev -- --host 0.0.0.0

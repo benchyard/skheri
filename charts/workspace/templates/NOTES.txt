@@ -1,0 +1,9 @@
+Workspace: {{ .Release.Namespace }}/{{ .Release.Name }}
+Source PVC: {{ .Release.Name }}-source (retained on uninstall; delete explicitly when finished)
+
+Connect with kubectl --context YOUR_CONTEXT -n {{ .Release.Namespace }} exec -it deploy/{{ .Release.Name }} -- sh
+Preview with kubectl --context YOUR_CONTEXT -n {{ .Release.Namespace }} port-forward svc/{{ .Release.Name }} 5173:{{ .Values.port }}
+
+This workspace does not install or authenticate a coding agent. Your agent can
+execute here through kubectl, or you can supply an image with your preferred CLI.
+Shared-kernel containers are not a hostile-code or cross-tenant security boundary.

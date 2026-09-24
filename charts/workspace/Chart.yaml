@@ -1,0 +1,6 @@
+apiVersion: v2
+name: skheri-workspace
+description: A persistent Kubernetes development workspace with optional preview ingress.
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

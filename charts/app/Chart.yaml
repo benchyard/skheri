@@ -1,0 +1,6 @@
+apiVersion: v2
+name: skheri-app
+description: Deploy a built application independently of its development workspace.
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

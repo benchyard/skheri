@@ -1,0 +1,19 @@
+# One release per task, in a dedicated namespace. Source survives pod replacement.
+image: node:22-bookworm-slim
+imagePullPolicy: IfNotPresent
+command: ["sh", "-c", "mkdir -p /workspace/app; exec sleep infinity"]
+port: 5173
+persistence:
+  size: 5Gi
+  storageClass: null
+resources:
+  requests: {cpu: 250m, memory: 512Mi}
+  limits: {cpu: "2", memory: 2Gi}
+# Inject short-lived, scoped credentials through an existing Kubernetes Secret.
+secretName: ""
+ingress:
+  enabled: false
+  className: ""
+  host: ""
+  tlsSecret: ""
+  annotations: {}
