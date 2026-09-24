@@ -91,8 +91,9 @@ def main():
             # Vite's injected client proves this is the dev server, not a stale image.
             expect(url, "/@vite/client")
             kubectl("exec", "deploy/demo", "--", "sed", "-i",
-                    "s/Preview before commit./Uncommitted acceptance edit./g", "/workspace/app/index.html")
+                    "s/Preview before commit[.]/Uncommitted acceptance edit./g", "/workspace/app/index.html")
             expect(url, "Uncommitted acceptance edit.")
+            expect(url, "</title>")  # The example edit must preserve surrounding HTML.
             kubectl("delete", "pod", "-l", "app.kubernetes.io/instance=demo", "--wait=true")
             kubectl("rollout", "status", "deploy/demo", "--timeout=180s")
             kubectl("exec", "deploy/demo", "--", "node", "-e",

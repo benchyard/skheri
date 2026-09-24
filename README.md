@@ -65,7 +65,7 @@ Open <http://localhost:5173>. From another terminal, edit the source **in the po
 
 ```bash
 kubectl --context "$SKHERI_CONTEXT" -n skheri-demo exec deploy/demo -- \
-  sed -i 's/Preview before commit./Live from your cloud workspace./g' /workspace/app/index.html
+  sed -i 's/Preview before commit[.]/Live from your cloud workspace./g' /workspace/app/index.html
 ```
 
 The browser refreshes without a Git commit or an image build. Kubernetes keeps the
